@@ -10,6 +10,7 @@ import { NavigationService } from 'app/core/navigation/navigation.service';
 import { FormControl } from '@angular/forms';
 import { FuseConfigService } from '@fuse/services/config';
 import { Scheme } from 'app/core/config/app.config';
+import { environment } from 'environments/environment';
 
 @Component({
     selector     : 'symplified-layout',
@@ -27,6 +28,7 @@ export class SymplifiedLayoutComponent implements OnInit, OnDestroy, AfterViewIn
     isDarkMode: FormControl<boolean> = new FormControl(false);
     navigation: Navigation;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
+    public version: string = environment.appVersion;
 
     /**
      * Constructor
