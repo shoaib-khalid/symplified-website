@@ -16,7 +16,7 @@ import { LandingWhySymplifiedComponent } from 'app/modules/landing/why-symplifie
 import { LandingECommerceComponent } from 'app/modules/landing/solutions/ecommerce/ecommerce.component';
 import { LandingServicesComponent } from 'app/modules/landing/solutions/services/services.component';
 import { LandingContactUsComponent } from 'app/modules/landing/contact-us/contact-us.component';
-import { LandingTermAndConditionComponent } from 'app/modules/landing/legal/term-and-condition/term-and-condition.component';
+import { LandingTermAndConditionComponent } from 'app/modules/landing/legal/terms-and-conditions/terms-and-conditions.component';
 import { LandingRefundPolicyComponent } from 'app/modules/landing/legal/refund-policy/refund-policy.component';
 import { LandingPrivacyPolicyComponent } from 'app/modules/landing/legal/privacy-policy/privacy-policy.component';
 

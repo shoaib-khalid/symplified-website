@@ -9,7 +9,7 @@ import { LandingServicesComponent } from 'app/modules/landing/solutions/services
 import { LandingWhySymplifiedComponent } from 'app/modules/landing/why-symplified/why-symplified.component';
 import { LandingPrivacyPolicyComponent } from './legal/privacy-policy/privacy-policy.component';
 import { LandingRefundPolicyComponent } from './legal/refund-policy/refund-policy.component';
-import { LandingTermAndConditionComponent } from './legal/term-and-condition/term-and-condition.component';
+import { LandingTermAndConditionComponent } from './legal/terms-and-conditions/terms-and-conditions.component';
 
 export const landingRoutes: Route[] = [
     {
@@ -61,7 +61,7 @@ export const landingRoutes: Route[] = [
                 component: LandingRefundPolicyComponent
             },
             {
-                path     : 'term-and-condition',
+                path     : 'terms-and-conditions',
                 component: LandingTermAndConditionComponent
             }
         ]
