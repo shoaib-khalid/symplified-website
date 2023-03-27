@@ -1,0 +1,170 @@
+<div class="flex flex-col w-full h-full">
+    <!-- Why Symplified -->
+    <div class="flex flex-col py-10 px-4">
+        <!-- Title -->
+        <span class="text-center text-2xl uppercase text-primary-600 font-semibold mb-10">Why Symplified</span>
+        <!-- Content -->
+        <div class="flex flex-col w-full justify-center md:px-12">
+            <div class="flex flex-col sm:flex-row w-full mb-4">
+                <div class="flex flex-col sm:flex-row w-full sm:w-1/2 mb-4 sm:mb-0 mr-2 justify-between rounded-lg bg-card shadow-lg border">
+                    <img class="w-full sm:w-40 h-40" src="assets/images/static/answer-enquiries@1x.jpg" alt="">
+                    <div class="flex flex-col grow p-2 sm:p-4 line-clamp-4">
+                        <p class="text-lg sm:text-xl uppercase font-semibold">No fixed monthly fee</p>
+                        <p class="">It's based on a Pay As You Earn (PAYE) model</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row w-full sm:w-1/2 justify-between rounded-lg bg-card shadow-lg border">
+                    <img class="w-full sm:w-40 h-40" src="assets/images/static/take-orders@1x.jpg" alt="">
+                    <div class="flex flex-col grow p-2 sm:p-4 line-clamp-4">
+                        <p class="text-lg sm:text-xl uppercase font-semibold">Free store set up</p>
+                        <p class="">Your online store setup platform is FREE – start today!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row w-full mb-4 justify-center">
+                <div class="flex flex-col sm:flex-row w-full sm:w-1/2 justify-between rounded-lg bg-card shadow-lg border">
+                    <img class="w-full sm:w-40 h-40" src="assets/images/static/arrange-delivery@1x.jpg" alt="">
+                    <div class="flex flex-col grow p-2 sm:p-4 line-clamp-4">
+                        <p class="text-lg sm:text-xl uppercase font-semibold">Inclusive payment & delivery features</p>
+                        <p class="">End to end process allowing you to track with ease</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row w-full">
+                <div class="flex flex-col sm:flex-row w-full sm:w-1/2 mb-4 sm:mb-0 mr-2 justify-between rounded-lg bg-card shadow-lg border">
+                    <img class="w-full sm:w-40 h-40" src="assets/images/static/shutterstock-1431394355@1x.jpg" alt="">
+                    <div class="flex flex-col grow p-2 sm:p-4 line-clamp-4">
+                        <p class="text-lg sm:text-xl uppercase font-semibold">24/7 access</p>
+                        <p class="">Market and sell at any time subject to your business needs</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row w-full sm:w-1/2 justify-between rounded-lg bg-card shadow-lg border">
+                    <img class="w-full sm:w-40 h-40" src="assets/images/static/arrange-delivery@1x.jpg" alt="">
+                    <div class="flex flex-col grow p-2 sm:p-4 line-clamp-4">
+                        <p class="text-lg sm:text-xl uppercase font-semibold">Personalised branding</p>
+                        <p class="">Place your logo and banners in the store</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Build and grow your online store with Symplified -->
+    <div class="flex flex-col py-10 px-4">
+        <!-- Title -->
+        <span class="text-center text-2xl uppercase text-primary-600 font-semibold mb-10">Build and grow your online store with Symplified</span>
+        <div class="flex flex-col w-full">
+            <div class="w-full h-0.5 bg-primary-200 mb-4"></div>
+            <ng-container *ngIf="faqs && faqs.length">
+                <ng-container *ngFor="let faq of faqs">
+                    <div class="">
+                        <div class="flex flex-row items-center justify-between px-4">
+                            <span class="text-xl font-bold">
+                                {{faq.question}}
+                            </span>
+                            <button
+                                (click)="faq.isOpen = !faq.isOpen"
+                                class="w-10 h-10 rounded-full"
+                                mat-icon-button>
+                                <mat-icon [svgIcon]="faq.isOpen ? 'heroicons_solid:chevron-up' : 'heroicons_solid:chevron-down'"></mat-icon>
+                            </button>
+                        </div>
+                        <div *ngIf="faq.isOpen" class="px-4 mt-4 text-lg" [innerHTML]="faq.answer"></div>
+                        <div class="w-full h-0.5 bg-primary-200 my-4"></div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </div>
+    </div>
+    <!-- Got more questions? -->
+    <div class="w-full flex flex-col items-center bg-primary-500 p-4">
+        <!-- Title -->
+        <span class="text-4xl uppercase text-white font-semibold mt-4 text-center">Got more questions?</span>
+        <!-- Sub-title -->
+        <span class="text-xl text-white my-4">Simply get in touch with us via</span>
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Email -->
+            <div class="col-span-2 sm:col-span-1 flex flex-col h-40 w-full p-4 bg-card rounded-lg border shadow-lg">
+                <span class="text-xl font-semibold text-center uppercase">Email</span>
+                <div class="w-full h-0.5 bg-primary-200 my-4"></div>
+                <a [href]="'mailto:' + info.email" class="text-2xl items-center my-1 text-center underline text-primary-600">
+                    {{info.email}}
+                </a>
+            </div>
+            <!-- Contact -->
+            <div class="col-span-2 sm:col-span-1 flex flex-col h-40 w-full p-4 bg-card rounded-lg border shadow-lg">
+                <span class="text-xl font-semibold text-center uppercase">Phone</span>
+                <div class="w-full h-0.5 bg-primary-200 my-4"></div>
+                <a [href]="'https://wa.me/' + (info.phonenumber | replaceSubstring : '[^\\d]+' : '' | replaceSubstring : ' ' : '' | replaceSubstring : ' ' : '')" class="text-2xl items-center my-1 text-center">
+                    {{info.phonenumber}}
+                </a>
+            </div>
+            <!-- Address -->
+            <div class="col-span-2 flex flex-col h-auto sm:h-40 w-full p-4 bg-card rounded-lg border shadow-lg">
+                <span class="text-xl font-semibold text-center capitalize">Address</span>
+                <div class="w-full h-0.5 bg-primary-200 my-4"></div>
+                <span class="flex flex-row text-lg sm:text-2xl items-center my-1">
+                    {{info.address}}
+                </span>
+            </div>
+            <!-- Contact Form -->
+            <div class="col-span-2 flex flex-col w-full p-4 bg-card rounded-lg border shadow-lg">
+                <!-- Name -->
+                <mat-form-field class="w-full fuse-mat-dense" floatLabel="always">
+                    <mat-icon class="mr-2" [svgIcon]="'heroicons_outline:user-circle'"></mat-icon>                             
+                    <input 
+                        matInput 
+                        placeholder="Name">
+                </mat-form-field>
+                <!-- Contact -->
+                <div class="flex flex-col sm:flex-row w-full">
+                    <!-- Email -->
+                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense pr-2" floatLabel="always">
+                        <mat-icon class="mr-2" [svgIcon]="'mat_outline:email'"></mat-icon>                             
+                        <input 
+                            matInput 
+                            placeholder="Email">
+                    </mat-form-field>
+                    <!-- Mobile Number -->
+                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense" floatLabel="always">
+                        <mat-icon class="mr-2" [svgIcon]="'mat_outline:phone'"></mat-icon>                             
+                        <input 
+                            matInput 
+                            placeholder="Mobile">
+                    </mat-form-field>
+                </div>
+                <!-- Company -->
+                <div class="flex flex-col sm:flex-row w-full">
+                    <!-- Company Name -->
+                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense pr-2" floatLabel="always">
+                        <mat-icon class="mr-2" [svgIcon]="'heroicons_outline:office-building'"></mat-icon>                             
+                        <input 
+                            matInput 
+                            placeholder="Company Name">
+                    </mat-form-field>
+                    <!-- Industry -->
+                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense" floatLabel="always">
+                        <mat-icon class="mr-2" [svgIcon]="'mat_outline:work_outline'"></mat-icon>                             
+                        <input 
+                            matInput 
+                            placeholder="Industry">
+                    </mat-form-field>
+                </div>
+                <div class="w-full flex justify-end">
+                    <button
+                        class="w-auto"
+                        mat-raised-button
+                        [color]="'primary'"
+                        type="button">
+                        Submit
+                    </button>
+                </div>
+            </div>
+            <!-- Decoration -->
+            <div class="col-span-2 flex flex-row w-full justify-end items-end">
+                <div class="w-1 h-1 rounded-full bg-white mx-1"></div>
+                <div class="w-1 h-1 rounded-full bg-white mx-1"></div>
+                <div class="w-1 h-1 rounded-full bg-white mx-1"></div>
+            </div>
+        </div>
+    </div>
+</div>

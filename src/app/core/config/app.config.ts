@@ -41,7 +41,7 @@ export const appConfig: AppConfig = {
         lg: '1280px',
         xl: '1440px'
     },
-    theme  : 'theme-default',
+    theme  : 'theme-symplified',
     themes : [
         {
             id  : 'theme-default',
@@ -66,6 +66,10 @@ export const appConfig: AppConfig = {
         {
             id  : 'theme-amber',
             name: 'Amber'
+        },
+        {
+            id  : 'theme-symplified',
+            name: 'Symplified'
         }
     ]
 };

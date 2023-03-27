@@ -1,0 +1,105 @@
+<div class="flex flex-col w-full h-full">
+    <!-- Banner -->
+    <div class="relative flex flex-col w-full">
+        <img
+            class="hidden md:block object-fit p-2 w-full md:h-96 blur-sm md:blur-none" 
+            src="assets/images/static/headerimage-contact-us.jpg" alt="Banner" />
+        <div class="md:absolute flex flex-col items-start justify-center w-full h-full p-4 md:p-0 md:h-auto md:w-128 md:left-16 md:top-20">
+            <span class="text-2xl text-black dark:text-white md:dark:text-black font-semibold capitalize">Contact Us</span>
+            <div class="w-30 bg-primary-500 dark:bg-white md:dark:bg-primary-500 h-0.5 my-8"></div>
+            <span class="text-3xl sm:text-4xl uppercase text-black dark:text-white md:dark:text-black">Digitalise your business with your very own online store</span>
+        </div>
+    </div>
+    <!-- Got more questions? -->
+    <div class="w-full flex flex-col items-center bg-primary-500 p-4">
+        <!-- Title -->
+        <span class="text-4xl uppercase text-white font-semibold mt-4 text-center">Got more questions?</span>
+        <!-- Sub-title -->
+        <span class="text-xl text-white my-4">Simply get in touch with us via</span>
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Email -->
+            <div class="col-span-2 sm:col-span-1 flex flex-col h-40 w-full p-4 bg-card rounded-lg border shadow-lg">
+                <span class="text-xl font-semibold text-center uppercase">Email</span>
+                <div class="w-full h-0.5 bg-primary-200 my-4"></div>
+                <a [href]="'mailto:' + info.email" class="text-2xl items-center my-1 text-center underline text-primary-600">
+                    {{info.email}}
+                </a>
+            </div>
+            <!-- Contact -->
+            <div class="col-span-2 sm:col-span-1 flex flex-col h-40 w-full p-4 bg-card rounded-lg border shadow-lg">
+                <span class="text-xl font-semibold text-center uppercase">Phone</span>
+                <div class="w-full h-0.5 bg-primary-200 my-4"></div>
+                <a [href]="'https://wa.me/' + (info.phonenumber | replaceSubstring : '[^\\d]+' : '' | replaceSubstring : ' ' : '' | replaceSubstring : ' ' : '')" class="text-2xl items-center my-1 text-center">
+                    {{info.phonenumber}}
+                </a>
+            </div>
+            <!-- Address -->
+            <div class="col-span-2 flex flex-col sm:h-40 w-full p-4 bg-card rounded-lg border shadow-lg">
+                <span class="text-xl font-semibold text-center capitalize">Address</span>
+                <div class="w-full h-0.5 bg-primary-200 my-4"></div>
+                <span class="flex flex-row text-lg sm:text-2xl items-center my-1">
+                    {{info.address}}
+                </span>
+            </div>
+            <!-- Contact Form -->
+            <div class="col-span-2 flex flex-col w-full p-4 bg-card rounded-lg border shadow-lg">
+                <!-- Name -->
+                <mat-form-field class="w-full fuse-mat-dense" floatLabel="always">
+                    <mat-icon class="mr-2" [svgIcon]="'heroicons_outline:user-circle'"></mat-icon>                             
+                    <input 
+                        matInput 
+                        placeholder="Name">
+                </mat-form-field>
+                <!-- Contact -->
+                <div class="flex flex-col sm:flex-row w-full">
+                    <!-- Email -->
+                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense pr-2" floatLabel="always">
+                        <mat-icon class="mr-2" [svgIcon]="'mat_outline:email'"></mat-icon>                             
+                        <input 
+                            matInput 
+                            placeholder="Email">
+                    </mat-form-field>
+                    <!-- Mobile Number -->
+                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense" floatLabel="always">
+                        <mat-icon class="mr-2" [svgIcon]="'mat_outline:phone'"></mat-icon>                             
+                        <input 
+                            matInput 
+                            placeholder="Mobile">
+                    </mat-form-field>
+                </div>
+                <!-- Company -->
+                <div class="flex flex-col sm:flex-row w-full">
+                    <!-- Company Name -->
+                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense pr-2" floatLabel="always">
+                        <mat-icon class="mr-2" [svgIcon]="'heroicons_outline:office-building'"></mat-icon>                             
+                        <input 
+                            matInput 
+                            placeholder="Company Name">
+                    </mat-form-field>
+                    <!-- Industry -->
+                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense" floatLabel="always">
+                        <mat-icon class="mr-2" [svgIcon]="'mat_outline:work_outline'"></mat-icon>                             
+                        <input 
+                            matInput 
+                            placeholder="Industry">
+                    </mat-form-field>
+                </div>
+                <div class="w-full flex justify-end">
+                    <button
+                        class="w-auto"
+                        mat-raised-button
+                        [color]="'primary'"
+                        type="button">
+                        Submit
+                    </button>
+                </div>
+            </div>
+            <!-- Decoration -->
+            <div class="col-span-2 flex flex-row w-full justify-end items-end">
+                <div class="w-1 h-1 rounded-full bg-white mx-1"></div>
+                <div class="w-1 h-1 rounded-full bg-white mx-1"></div>
+                <div class="w-1 h-1 rounded-full bg-white mx-1"></div>
+            </div>
+        </div>
+    </div>
+</div>

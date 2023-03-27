@@ -23,6 +23,7 @@
             <!-- Basic -->
             <ng-container *ngIf="item.type === 'basic'">
                 <div
+                    [routerLink]="item.link"
                     class="fuse-horizontal-navigation-menu-item"
                     [disabled]="item.disabled"
                     mat-menu-item>
@@ -76,7 +77,7 @@
         [ngClass]="item.classes?.wrapper">
 
         <div
-            class="fuse-horizontal-navigation-item"
+            class="fuse-horizontal-navigation-item justify-center"
             [ngClass]="{'fuse-horizontal-navigation-item-disabled': item.disabled,
                          'fuse-horizontal-navigation-item-active-forced': item.active}"
             [matTooltip]="item.tooltip || ''">
@@ -115,6 +116,11 @@
                     </div>
                 </div>
             </ng-container>
+
+            <!-- Arrow -->
+            <mat-icon
+                class="fuse-vertical-navigation-item-arrow icon-size-5 ml-2"
+                [svgIcon]="'heroicons_solid:chevron-down'"></mat-icon>
         </div>
     </div>
 

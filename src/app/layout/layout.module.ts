@@ -13,6 +13,7 @@ import { FuturisticLayoutModule } from 'app/layout/layouts/vertical/futuristic/f
 import { ThinLayoutModule } from 'app/layout/layouts/vertical/thin/thin.module';
 import { SettingsModule } from 'app/layout/common/settings/settings.module';
 import { SharedModule } from 'app/shared/shared.module';
+import { SymplifiedLayoutModule } from './layouts/custom/symplified/symplified.module';
 
 const layoutModules = [
     // Empty
@@ -30,7 +31,10 @@ const layoutModules = [
     CompactLayoutModule,
     DenseLayoutModule,
     FuturisticLayoutModule,
-    ThinLayoutModule
+    ThinLayoutModule,
+
+    // Custom navigation
+    SymplifiedLayoutModule
 ];
 
 @NgModule({

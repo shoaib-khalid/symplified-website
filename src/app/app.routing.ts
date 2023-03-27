@@ -3,31 +3,33 @@ import { AuthGuard } from 'app/core/auth/guards/auth.guard';
 import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 import { LayoutComponent } from 'app/layout/layout.component';
 import { InitialDataResolver } from 'app/app.resolvers';
+import { LandingDataResolver } from './modules/landing/landing.resolvers';
 
 // @formatter:off
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 export const appRoutes: Route[] = [
 
-    // Redirect empty path to '/example'
-    {path: '', pathMatch : 'full', redirectTo: 'example'},
 
     // Redirect signed-in user to the '/example'
     //
     // After the user signs in, the sign-in page will redirect the user to the 'signed-in-redirect'
     // path. Below is another redirection for that path to redirect the user to the desired
     // location. This is a small convenience to keep all main routes together here on this file.
-    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'example'},
+    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: '/'},
 
     // Landing routes
     {
         path: '',
         component: LayoutComponent,
+        resolve: {
+            initialData: LandingDataResolver,
+        },
         data: {
-            layout: 'empty'
+            layout: 'symplified'
         },
         children: [
-            {path: 'home', loadChildren: () => import('app/modules/landing/home/home.module').then(m => m.LandingHomeModule)},
+            {path: '', loadChildren: () => import('app/modules/landing/landing.module').then(m => m.LandingModule)},
         ]
     },
 
@@ -74,4 +76,15 @@ export const appRoutes: Route[] = [
     //         {path: 'example', loadChildren: () => import('app/modules/admin/example/example.module').then(m => m.ExampleModule)},
     //     ]
     // }
+
+    //Wild Card Route for 404 request
+    { 
+        path: '**', 
+        pathMatch: 'full', 
+        component: LayoutComponent,
+        data: {
+            layout: 'empty'
+        },
+        loadChildren: () => import('app/modules/landing/error-404/error-404.module').then(m => m.Error404Module)
+    },
 ];

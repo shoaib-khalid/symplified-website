@@ -10,7 +10,8 @@ const generatePalette = require(path.resolve(__dirname, ('src/@fuse/tailwind/uti
  * Tailwind-like color palettes automatically
  */
 const customPalettes = {
-    brand: generatePalette('#2196F3')
+    brand: generatePalette('#2196F3'),
+    symplified: generatePalette('#0082ca')
 };
 
 /**
@@ -31,6 +32,10 @@ const themes = {
             ...colors.red,
             DEFAULT: colors.red[600]
         },
+        symplified: {
+            ...customPalettes.symplified,
+            DEFAULT: customPalettes.symplified[500]
+        },
         'on-warn': {
             500: colors.red['50']
         }
@@ -39,6 +44,9 @@ const themes = {
     // theme and will extend it with their given configuration.
     'brand' : {
         primary: customPalettes.brand
+    },
+    'symplified': {
+        primary: customPalettes.symplified
     },
     'teal'  : {
         primary: {
@@ -154,6 +162,7 @@ const config = {
                 '240': '60rem',
                 '256': '64rem',
                 '280': '70rem',
+                '300': '75rem',
                 '320': '80rem',
                 '360': '90rem',
                 '400': '100rem',
