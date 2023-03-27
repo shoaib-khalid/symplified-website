@@ -1,11 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-    selector     : 'landing-ecommerce',
-    templateUrl  : './ecommerce.component.html',
+    selector     : 'landing-retail',
+    templateUrl  : './retail.component.html',
     encapsulation: ViewEncapsulation.None
 })
-export class LandingECommerceComponent
+export class LandingRetailComponent
 {
     /**
      * Constructor

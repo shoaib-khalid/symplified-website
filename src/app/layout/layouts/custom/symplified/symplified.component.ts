@@ -20,7 +20,7 @@ import { environment } from 'environments/environment';
         '(window:scroll)': 'getScrollHeight($event)'
     }
 })
-export class SymplifiedLayoutComponent implements OnInit, OnDestroy, AfterViewInit
+export class SymplifiedLayoutComponent implements OnInit, OnDestroy
 {
     offsetFlag: boolean = false;
     info: { social: { facebook: string};};
@@ -98,13 +98,6 @@ export class SymplifiedLayoutComponent implements OnInit, OnDestroy, AfterViewIn
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next(null);
         this._unsubscribeAll.complete();
-    }
-
-    ngAfterViewInit(): void
-    {
-        window.addEventListener('scroll', () => {
-            console.log('scroll event fired');
-          });
     }
 
     // -----------------------------------------------------------------------------------------------------

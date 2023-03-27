@@ -9,25 +9,25 @@ export const defaultNavigation: FuseNavigationItem[] = [
         children: [
             {
                 id      : 'solution-fnb',
-                title   : 'Fnb',
+                title   : 'F&B',
                 type    : 'basic',
                 icon    : 'mat_outline:fastfood',
                 link    : '/solutions/fnb',
             },
             {
-                id   : 'solution-ecommerce',
-                title: 'E-Commerce',
+                id   : 'solution-retail',
+                title: 'Retail',
                 type : 'basic',
                 icon : 'heroicons_outline:shopping-bag',
-                link : '/solutions/ecommerce'
+                link : '/solutions/retail'
             },
-            // {
-            //     id   : 'solution-services',
-            //     title: 'Services',
-            //     type : 'basic',
-            //     icon : 'feather:tool',
-            //     link : '/solutions/services'
-            // }
+            {
+                id   : 'solution-services',
+                title: 'Services',
+                type : 'basic',
+                icon : 'feather:tool',
+                link : '/solutions/services'
+            }
         ],
         icon : 'heroicons_outline:light-bulb',
         link : '/example'
@@ -46,13 +46,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
         icon : 'heroicons_outline:information-circle',
         link : '/about-us'
     },
-    {
-        id   : 'pricing',
-        title: 'Pricing',
-        type : 'basic',
-        icon : 'price_check',
-        link : '/pricing'
-    }
+    // {
+    //     id   : 'pricing',
+    //     title: 'Pricing',
+    //     type : 'basic',
+    //     icon : 'price_check',
+    //     link : '/pricing'
+    // }
 ];
 export const compactNavigation: FuseNavigationItem[] = [
     {
@@ -80,36 +80,43 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         children: [
             {
                 id      : 'solution-fnb',
-                title   : 'Fnb',
+                title   : 'F&B',
                 type    : 'basic',
                 icon    : 'mat_outline:fastfood',
                 link    : '/solutions/fnb',
             },
             {
-                id   : 'solution-ecommerce',
-                title: 'E-Commerce',
+                id   : 'solution-retail',
+                title: 'Retail',
                 type : 'basic',
                 icon : 'heroicons_outline:shopping-bag',
-                link : '/solutions/ecommerce'
+                link : '/solutions/retail'
             },
-            // {
-            //     id   : 'solution-services',
-            //     title: 'Services',
-            //     type : 'basic',
-            //     icon : 'feather:tool',
-            //     link : '/solutions/services'
-            // }
+            {
+                id   : 'solution-services',
+                title: 'Services',
+                type : 'basic',
+                icon : 'feather:tool',
+                link : '/solutions/services'
+            }
         ],
         icon : 'heroicons_outline:light-bulb',
         link : '/example'
     },
     {
-        id   : 'why-symplified',
-        title: 'Why SYMplified',
+        id   : 'contact-us',
+        title: 'Contact Us',
         type : 'basic',
-        icon : 'heroicons_outline:question-mark-circle',
-        link : '/why-symplified'
+        icon : 'mat_outline:contact_mail',
+        link : '/contact-us'
     },
+    // {
+    //     id   : 'why-symplified',
+    //     title: 'Why SYMplified',
+    //     type : 'basic',
+    //     icon : 'heroicons_outline:question-mark-circle',
+    //     link : '/why-symplified'
+    // },
     {
         id   : 'about-us',
         title: 'About Us',
@@ -117,11 +124,11 @@ export const horizontalNavigation: FuseNavigationItem[] = [
         icon : 'heroicons_outline:information-circle',
         link : '/about-us'
     },
-    {
-        id   : 'pricing',
-        title: 'Pricing',
-        type : 'basic',
-        icon : 'price_check',
-        link : '/pricing'
-    }
+    // {
+    //     id   : 'pricing',
+    //     title: 'Pricing',
+    //     type : 'basic',
+    //     icon : 'price_check',
+    //     link : '/pricing'
+    // }
 ];

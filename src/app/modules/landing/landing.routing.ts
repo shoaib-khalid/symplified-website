@@ -3,7 +3,7 @@ import { LandingHomeComponent } from 'app/modules/landing/home/home.component';
 import { LandingPricingComponent } from 'app/modules/landing/pricing/pricing.component';
 import { LandingAboutUsComponent } from 'app/modules/landing/about-us/about-us.component';
 import { LandingContactUsComponent } from 'app/modules/landing/contact-us/contact-us.component';
-import { LandingECommerceComponent } from 'app/modules/landing/solutions/ecommerce/ecommerce.component';
+import { LandingRetailComponent } from 'app/modules/landing/solutions/retail/retail.component';
 import { LandingFnBComponent } from 'app/modules/landing/solutions/fnb/fnb.component';
 import { LandingServicesComponent } from 'app/modules/landing/solutions/services/services.component';
 import { LandingWhySymplifiedComponent } from 'app/modules/landing/why-symplified/why-symplified.component';
@@ -40,8 +40,8 @@ export const landingRoutes: Route[] = [
                 component: LandingFnBComponent
             },
             {
-                path     : 'ecommerce',
-                component: LandingECommerceComponent
+                path     : 'retail',
+                component: LandingRetailComponent
             },
             {
                 path     : 'services',

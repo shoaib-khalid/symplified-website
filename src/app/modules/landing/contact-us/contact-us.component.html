@@ -42,58 +42,84 @@
                 </span>
             </div>
             <!-- Contact Form -->
-            <div class="col-span-2 flex flex-col w-full p-4 bg-card rounded-lg border shadow-lg">
-                <!-- Name -->
-                <mat-form-field class="w-full fuse-mat-dense" floatLabel="always">
-                    <mat-icon class="mr-2" [svgIcon]="'heroicons_outline:user-circle'"></mat-icon>                             
-                    <input 
-                        matInput 
-                        placeholder="Name">
-                </mat-form-field>
-                <!-- Contact -->
-                <div class="flex flex-col sm:flex-row w-full">
-                    <!-- Email -->
-                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense pr-2" floatLabel="always">
-                        <mat-icon class="mr-2" [svgIcon]="'mat_outline:email'"></mat-icon>                             
+            <ng-container *ngIf="!isComplete; else formCompleted">
+                <form class="col-span-2 flex flex-col w-full p-4 bg-card rounded-lg border shadow-lg" 
+                    [formGroup]="emailForm">
+                    <!-- Name -->
+                    <mat-form-field class="w-full fuse-mat-dense" floatLabel="always">
+                        <mat-icon class="mr-2" [svgIcon]="'heroicons_outline:user-circle'"></mat-icon>                             
                         <input 
                             matInput 
-                            placeholder="Email">
+                            [placeholder]="'Name'"
+                            [formControlName]="'name'">
+                        <mat-error *ngIf="emailForm.get('name').hasError('required')">Required</mat-error>
                     </mat-form-field>
-                    <!-- Mobile Number -->
-                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense" floatLabel="always">
-                        <mat-icon class="mr-2" [svgIcon]="'mat_outline:phone'"></mat-icon>                             
-                        <input 
-                            matInput 
-                            placeholder="Mobile">
-                    </mat-form-field>
+                    <!-- Contact -->
+                    <div class="flex flex-col sm:flex-row w-full">
+                        <!-- Email -->
+                        <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense pr-2" floatLabel="always">
+                            <mat-icon class="mr-2" [svgIcon]="'mat_outline:email'"></mat-icon>                             
+                            <input 
+                                matInput 
+                                type="email"
+                                [placeholder]="'Email'"
+                                [formControlName]="'email'">
+                            <mat-error *ngIf="emailForm.get('email').hasError('required')">Required</mat-error>
+                            <mat-error *ngIf="emailForm.get('email').hasError('email')">Invalid Email</mat-error>
+                        </mat-form-field>
+                        <!-- Mobile Number -->
+                        <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense" floatLabel="always">
+                            <mat-icon class="mr-2" [svgIcon]="'mat_outline:phone'"></mat-icon>                             
+                            <input 
+                                matInput 
+                                type="tel"
+                                [placeholder]="'Mobile'"
+                                [formControlName]="'contactNo'">
+                            <mat-error *ngIf="emailForm.get('contactNo').hasError('required')">Required</mat-error>
+                            <mat-error *ngIf="emailForm.get('contactNo').hasError('minlength')">Min length 12 characters</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <!-- Company -->
+                    <div class="flex flex-col sm:flex-row w-full">
+                        <!-- Company Name -->
+                        <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense pr-2" floatLabel="always">
+                            <mat-icon class="mr-2" [svgIcon]="'heroicons_outline:office-building'"></mat-icon>                             
+                            <input 
+                                matInput 
+                                [placeholder]="'Company Name'"
+                                [formControlName]="'companyName'">
+                        </mat-form-field>
+                        <!-- Industry -->
+                        <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense" floatLabel="always">
+                            <mat-icon class="mr-2" [svgIcon]="'mat_outline:work_outline'"></mat-icon>                             
+                            <input 
+                                matInput 
+                                [placeholder]="'Industry'"
+                                [formControlName]="'industry'">
+                        </mat-form-field>
+                    </div>
+                    <!-- Button -->
+                    <div class="w-full flex justify-end">
+                        <button
+                            class="w-auto"
+                            type="button"
+                            (click)="sendEmail()"
+                            [disabled]="isLoading || isComplete || emailForm.invalid"
+                            [color]="'primary'"
+                            mat-raised-button>
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </ng-container>
+            <ng-template #formCompleted>
+                <div class="col-span-2 flex w-full h-40 items-center justify-center p-4 bg-card rounded-lg border shadow-lg">
+                    <div class="text-center text-lg sm:text-2xl">
+                        <span class="pr-2">Your email has been sent 🎉🎉.</span> 
+                        <span>We'll get back to you soon!!</span>
+                    </div>
                 </div>
-                <!-- Company -->
-                <div class="flex flex-col sm:flex-row w-full">
-                    <!-- Company Name -->
-                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense pr-2" floatLabel="always">
-                        <mat-icon class="mr-2" [svgIcon]="'heroicons_outline:office-building'"></mat-icon>                             
-                        <input 
-                            matInput 
-                            placeholder="Company Name">
-                    </mat-form-field>
-                    <!-- Industry -->
-                    <mat-form-field class="w-full sm:w-1/2 fuse-mat-dense" floatLabel="always">
-                        <mat-icon class="mr-2" [svgIcon]="'mat_outline:work_outline'"></mat-icon>                             
-                        <input 
-                            matInput 
-                            placeholder="Industry">
-                    </mat-form-field>
-                </div>
-                <div class="w-full flex justify-end">
-                    <button
-                        class="w-auto"
-                        mat-raised-button
-                        [color]="'primary'"
-                        type="button">
-                        Submit
-                    </button>
-                </div>
-            </div>
+            </ng-template>
             <!-- Decoration -->
             <div class="col-span-2 flex flex-row w-full justify-end items-end">
                 <div class="w-1 h-1 rounded-full bg-white mx-1"></div>

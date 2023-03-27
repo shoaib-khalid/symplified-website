@@ -13,7 +13,7 @@ import { LandingFnBComponent } from 'app/modules/landing/solutions/fnb/fnb.compo
 import { LandingAboutUsComponent } from 'app/modules/landing/about-us/about-us.component';
 import { LandingPricingComponent } from 'app/modules/landing/pricing/pricing.component';
 import { LandingWhySymplifiedComponent } from 'app/modules/landing/why-symplified/why-symplified.component';
-import { LandingECommerceComponent } from 'app/modules/landing/solutions/ecommerce/ecommerce.component';
+import { LandingRetailComponent } from 'app/modules/landing/solutions/retail/retail.component';
 import { LandingServicesComponent } from 'app/modules/landing/solutions/services/services.component';
 import { LandingContactUsComponent } from 'app/modules/landing/contact-us/contact-us.component';
 import { LandingTermAndConditionComponent } from 'app/modules/landing/legal/terms-and-conditions/terms-and-conditions.component';
@@ -28,7 +28,7 @@ import { LandingPrivacyPolicyComponent } from 'app/modules/landing/legal/privacy
         LandingPricingComponent,
         LandingWhySymplifiedComponent,
         LandingFnBComponent,
-        LandingECommerceComponent,
+        LandingRetailComponent,
         LandingServicesComponent,
         LandingPrivacyPolicyComponent,
         LandingRefundPolicyComponent,
