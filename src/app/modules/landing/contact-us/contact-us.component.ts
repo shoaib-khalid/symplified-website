@@ -31,7 +31,7 @@ export class LandingContactUsComponent implements OnInit
 
     ngOnInit(): void {
 
-        // Symplified information
+        // SYMplified information
         this.info = {
             email: "ask@symplified.biz",
             phonenumber: "+6013 363 9668",
